@@ -1,4 +1,4 @@
-from constants import USEFUL_DATA, VALID_POSITIONS
+from .constants import USEFUL_DATA, VALID_POSITIONS
 
 def process_json_data(data, name=None, team=None):
     data = _remove_non_offensive_players(data)
@@ -34,7 +34,7 @@ def _extract_all_players(data):
 
 def _remove_useless_data(data):
     filtered_data = {}
-    for key, val in data.items():
+    for key, val in list(data.items()):
         if key in USEFUL_DATA:
             filtered_data[key] = val
     return filtered_data

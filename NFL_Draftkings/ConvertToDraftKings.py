@@ -1,4 +1,4 @@
-from constants import OFFENSIVE_SCORING_MULTIPLIERS, DEFENSIVE_SCORING_MULTIPLIERS
+from .constants import OFFENSIVE_SCORING_MULTIPLIERS, DEFENSIVE_SCORING_MULTIPLIERS
 
 def convert_to_DK(data):
     if data['position'] == 'DEF':
@@ -14,7 +14,7 @@ def _get_defensive_scoring(data):
 
 def _get_offensive_multiplier_scoring(data):
     points = 0
-    for key, val in data.items():
+    for key, val in list(data.items()):
         try:
             points += int(val) * OFFENSIVE_SCORING_MULTIPLIERS[int(key)]
         except KeyError:
@@ -23,7 +23,7 @@ def _get_offensive_multiplier_scoring(data):
 
 def _get_defensive_multiplier_scoring(data):
     points = 0
-    for key, val in data.items():
+    for key, val in list(data.items()):
         try:
             points += int(val) * DEFENSIVE_SCORING_MULTIPLIERS[int(key)]
         except KeyError:

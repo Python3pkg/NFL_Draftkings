@@ -4,7 +4,7 @@ from datetime import datetime
 from requests import get
 from requests_cache import install_cache
 
-from constants import VALID_POSITIONS, BASE_URL, ONE_HOUR
+from .constants import VALID_POSITIONS, BASE_URL, ONE_HOUR
 
 install_cache('nfl_api_cache', expire_after=ONE_HOUR)
 

@@ -1,6 +1,6 @@
-from GatherPlayerData import gather_json
-from ProcessPlayerStats import process_json_data
-from constants import ALL_WEEKS
+from .GatherPlayerData import gather_json
+from .ProcessPlayerStats import process_json_data
+from .constants import ALL_WEEKS
 
 def get_player_stats(name=None, position=None, team=None, week=None, season=None):
     data = gather_json(week=week, season=season, position=position)

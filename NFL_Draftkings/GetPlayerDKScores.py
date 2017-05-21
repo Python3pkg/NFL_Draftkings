@@ -1,5 +1,5 @@
-from ConvertToDraftKings import convert_to_DK
-from GetPlayerStats import get_player_stats, get_weekly_player_stats
+from .ConvertToDraftKings import convert_to_DK
+from .GetPlayerStats import get_player_stats, get_weekly_player_stats
 
 def get_scores(name=None, position=None, team=None, week=None, season=None):
     data = get_player_stats(name=name, position=position, team=team, week=week, season=season)
